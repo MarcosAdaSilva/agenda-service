@@ -13,6 +13,7 @@ import java.util.Optional;
 public interface PacienteRepository extends JpaRepository<Paciente, Long> {
 
     Optional<Paciente> findByCpf(String cpf);
+    Optional<Paciente> findByEmail(String email);
 
     @Query("SELECT p FROM Paciente p WHERE p.cpf = ?1")
     Optional<Paciente> buscarPorCpf(String cpf);

@@ -30,7 +30,7 @@ public class SwaggerConfig {
                 .title("Spring Boot REST API")
                 .description("Aplicação de Agendamento de Consultas")
                 .version("1.0.0")
-                .contact(new Contact("Renan Lessa", "http://github.com/paneladev", "paneladev@gmail.com"))
+                .contact(new Contact("Marcos Antônio", "http://github.com/MarcosAdaSilva", "marcaofly@gmail.com"))
                 .build();
     }
 }

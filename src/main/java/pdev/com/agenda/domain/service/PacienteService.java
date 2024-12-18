@@ -19,7 +19,7 @@ public class PacienteService {
 
     public Paciente salvar(Paciente paciente) {
         boolean existeCpf = false;
-        boolean existEmail = false;
+        boolean existeEmail = false;
 
         Optional<Paciente> optPaciente = repository.findByCpf(paciente.getCpf());
 
@@ -28,7 +28,6 @@ public class PacienteService {
                 existeCpf = true;
             }
         }
-
         if (existeCpf) {
             throw new BusinessException("Cpf já cadastrado!");
         }
@@ -36,10 +35,10 @@ public class PacienteService {
 
         if (optionalPaciente.isPresent()) {
             if (!optionalPaciente.get().getId().equals(paciente.getId())) {
-                existEmail = true;
+                existeEmail = true;
             }
         }
-        if (existEmail) {
+        if (existeEmail) {
             throw new BusinessException("Email já cadastrado!");
         }
 

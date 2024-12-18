@@ -51,7 +51,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable();
         http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-        http.authorizeRequests().antMatchers(AUTH_WHITELIST).permitAll();
+        http.authorizeRequests().antMatchers(AUTH_WHITELIST).permitAll(); //deixa o swagger na lista de abertos sem senha
         http.authorizeRequests().anyRequest().authenticated();
         http.addFilter(new CustomAuthenticationFilterConfig(authenticationManagerBean(), tokenService));
         http.addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class);

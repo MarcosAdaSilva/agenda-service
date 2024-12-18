@@ -29,7 +29,7 @@ public class AgendaService {
     }
 
     public Agenda salvar(Agenda agenda) {
-        Optional<Paciente> optPaciente = pacienteService.buscarPorId(agenda.getPaciente().getId());
+        Optional<Paciente> optPaciente = pacienteService.buscarPorId(agenda.getPaciente().getId());// teremos um possível bug no agenda.getPaciente...
 
         if (optPaciente.isEmpty()) {
             throw new BusinessException("Paciente não encontrado");

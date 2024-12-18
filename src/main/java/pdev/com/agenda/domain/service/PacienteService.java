@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import pdev.com.agenda.domain.entity.Paciente;
+import pdev.com.agenda.domain.entity.PacienteAgenda;
 import pdev.com.agenda.domain.repository.PacienteRepository;
 import pdev.com.agenda.exception.BusinessException;
 
@@ -20,6 +21,9 @@ public class PacienteService {
     public Paciente salvar(Paciente paciente) {
         boolean existeCpf = false;
         boolean existeEmail = false;
+
+       // List<PacienteAgenda> allAgendamentos = repository.findAllAgendamentos();
+       // System.out.println("Quantidade de linhas: " + allAgendamentos.size()); metodo de simples busca para chamar a query no repository
 
         Optional<Paciente> optPaciente = repository.findByCpf(paciente.getCpf());
 
